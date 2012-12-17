@@ -42,7 +42,7 @@ class EnumMeta(type):
 
   @classmethod
   def resolveAttrs(cls, enumValue):
-    enumValue.kwargs = {name: cls.resolveAttr(val) for (name, val) in enumValue.kwargs.items()}
+    enumValue.kwargs = dict((name, cls.resolveAttr(val)) for (name, val) in enumValue.kwargs.items())
     enumValue.args = map(cls.resolveAttr, enumValue.args)
 
 class Enum(object):
