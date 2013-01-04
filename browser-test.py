@@ -1,3 +1,6 @@
+from browser import Browser
+import unittest
+
 class BrowserTest(unittest.TestCase):
 
   ie6clients = [
@@ -10,7 +13,7 @@ class BrowserTest(unittest.TestCase):
     "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)",
     "Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 6.0 ; .NET CLR 2.0.50215; SL Commerce Client v1.0; Tablet PC 2.0",
     "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
-    "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)" // Windows Mail on Vista
+    "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506)" # Windows Mail on Vista
   ]
 
   ie8clients = [
@@ -76,10 +79,11 @@ class BrowserTest(unittest.TestCase):
     "Mozilla/4.0 (compatible; Lotus-Notes/6.0; Windows-NT)"
   ]
 
-  lynxClient = [
-    "Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/0.9.7d",
-    "Lynx/2.7.1ac-0.102+intl+csuite libwww-FM/2.14"
-  ]
+  # Not supported
+  # lynxClient = [
+  #   "Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/0.9.7d",
+  #   "Lynx/2.7.1ac-0.102+intl+csuite libwww-FM/2.14"
+  # ]
 
   konqueror = [
     "Mozilla/5.0 (compatible; konqueror/3.3; linux 2.4.21-243-smp4G) (KHTML, like Geko)",
@@ -146,110 +150,110 @@ class BrowserTest(unittest.TestCase):
   ]
 
 
-  firefox3mobile = {
+  firefox3mobile = [
     "Mozilla/5.0 (X11; U; Linux armv7l; en-US; rv:1.9.2a1pre) Gecko/20091127 Firefox/3.5 Maemo Browser 1.5.6 RX-51 N900"
   ]
 
-  safari = {
+  safari = [
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_7; en-us) AppleWebKit/525.28.3 (KHTML, like Gecko) Version/3.2.3 Safari/525.28.3",
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-gb) AppleWebKit/523.10.6 (KHTML, like Gecko) Version/3.0.4 Safari/523.10.6"
   ]
 
-  safari5 = {
+  safari5 = [
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
     "Mozilla/5.0 (Windows; U; Windows NT 6.1; ja-JP) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16",
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_5; en-us) AppleWebKit/533.19.4 (KHTML, like Gecko) Version/5.0.3 Safari/533.19.4",
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; da-dk) AppleWebKit/533.21.1 (KHTML, like Gecko) Version/5.0.5 Safari/533.21.1"
   ]
 
-  safari4 = {
+  safari4 = [
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; en-us) AppleWebKit/531.21.8 (KHTML, like Gecko) Version/4.0.4 Safari/531.21.10",
     "Mozilla/5.0 (Windows; U; Windows NT 6.1; es-ES) AppleWebKit/531.22.7 (KHTML, like Gecko) Version/4.0.5 Safari/531.22.7",
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_7; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/4.0.1 Safari/530.18"
   ]
 
-  mobileSafari = {
+  mobileSafari = [
     "Mozilla/5.0 (Linux; U; Android 2.1; en-us; Nexus One Build/ERD62) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17",
-    "Mozilla/5.0 (iPod; U; CPU iPhone OS 2_0 like Mac OS X; de-de) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5A347 Safari/525.20", // Mobile Safari 3.1.1
-    "Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A101a Safari/419.3", // Mobile Safari 3.0
+    "Mozilla/5.0 (iPod; U; CPU iPhone OS 2_0 like Mac OS X; de-de) AppleWebKit/525.18.1 (KHTML, like Gecko) Version/3.1.1 Mobile/5A347 Safari/525.20", # Mobile Safari 3.1.1
+    "Mozilla/5.0 (iPod; U; CPU like Mac OS X; en) AppleWebKit/420.1 (KHTML, like Gecko) Version/3.0 Mobile/3A101a Safari/419.3", # Mobile Safari 3.0
     "Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B367 Safari/531.21.10",
     "Mozilla/5.0 (iPod; U; CPU iPhone OS 4_1 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8B117 Safari/6531.22.7",
     "Mozilla/5.0 (iPhone; CPU iPhone OS 5_0 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3"
   ]
 
-  dolfin = {
+  dolfin = [
     "Mozilla/5.0 (SAMSUNG; SAMSUNG-GT-S8500/S8500NEJE5; U; Bada/1.0; fr-fr) AppleWebKit/533.1 (KHTML, like Gecko) Dolfin/2.0 Mobile WVGA SMM-MMS/1.2.0 NexPlayer/3.0 profile/MIDP-2.1 configuration/CLDC-1.1 OPN-B"
   ]
 
   # similar to Safari, but doesn't mention Safari in the user-agent string
-  appleMail = {
+  appleMail = [
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.18.1 (KHTML, like Gecko)"
   ]
 
-  omniWeb = {
+  omniWeb = [
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-US) AppleWebKit/531.9+(KHTML, like Gecko, Safari/528.16) OmniWeb/v622.10.0",
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US) AppleWebKit/525.18 (KHTML, like Gecko, Safari/525.20) OmniWeb/v622.3.0.105198"
   ]
 
-  opera = {
+  opera = [
     "Opera/8.0 (Macintosh; PPC Mac OS X; U; en)",
     ]
 
-  opera9 = {
+  opera9 = [
     "Opera/9.52 (Windows NT 5.1; U; en)",
     "Opera/9.20 (Macintosh; Intel Mac OS X; U; en)"
     ]
 
-  opera10 = {
+  opera10 = [
     "Opera/9.80 (Windows NT 5.2; U; en) Presto/2.2.15 Version/10.10",
     "Opera/9.80 (Macintosh; Intel Mac OS X; U; en) Presto/2.6.30 Version/10.61"
     ]
 
-  operaMini = {
+  operaMini = [
     "Opera/9.60 (J2ME/MIDP; Opera Mini/4.2.13337/458; U; en) Presto/2.2.0",
     "Opera/9.80 (J2ME/MIDP; Opera Mini/5.0.16823/1428; U; en) Presto/2.2.0"
   ]
 
-  camino2 = {
+  camino2 = [
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en; rv:1.9.0.19) Gecko/2010111021 Camino/2.0.6 (MultiLang) (like Firefox/3.0.19)",
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en; rv:1.9.0.18) Gecko/2010021619 Camino/2.0.2 (like Firefox/3.0.18)"
   ]
 
-  camino = {
+  camino = [
     "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; it; rv:1.8.1.21) Gecko/20090327 Camino/1.6.7 (MultiLang) (like Firefox/2.0.0.21pre)",
     "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.8.0.4) Gecko/20060613 Camino/1.0.2"
   ]
 
-  flock = {
+  flock = [
     "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008100716 Firefox/3.0.3 Flock/2.0"
   ]
 
-  seaMonkey = {
+  seaMonkey = [
     "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.13) Gecko/20100914 Mnenhy/0.8.3 SeaMonkey/2.0.8"
   ]
 
-  bots = {
-    "Mozilla/5.0 (compatible; Googlebot/2.1; http://www.google.com/bot.html)",
-    "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)",
+  bots = [
+    "Mozilla/5.0 (compatible; Googlebot/2.1; http:#www.google.com/bot.html)",
+    "Mozilla/5.0 (compatible; Yahoo! Slurp; http:#help.yahoo.com/help/us/ysearch/slurp)",
     "Googlebot-Image/1.0"
   ]
 
-  tools = {
+  tools = [
     "curl/7.19.5 (i586-pc-mingw32msvc) libcurl/7.19.5 OpenSSL/0.9.8l zlib/1.2.3",
     "Wget/1.8.1"
   ]
 
-  thunderbird3 = {
+  thunderbird3 = [
     "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.12) Gecko/20101027 Thunderbird/3.1.6",
     "Mozilla/5.0 (Windows; U; Windows NT 6.1; sv-SE; rv:1.9.2.8) Gecko/20100802 Thunderbird/3.1.2 ThunderBrowse/3.3.2"
   ]
 
-  thunderbird2 = {
+  thunderbird2 = [
     "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.8.1.14) Gecko/20080421 Thunderbird/2.0.0.14",
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.17) Gecko/20080914 Thunderbird/2.0.0.17"
   ]
 
-  silk = {
+  silk = [
     "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us; Silk/1.1.0-80) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16 Silk-Accelerated=true"
   ]
 
@@ -257,27 +261,28 @@ class BrowserTest(unittest.TestCase):
     assertTrue(Browser.SAFARI.isInUserAgentString("Mozilla/5.0 (iPhone; U; CPU like Mac OS X; en) AppleWebKit/420+ (KHTML, like Gecko) Version/3.0 Mobile/1A543a Safari/419.3"))
 
   def test_version_detection(self):
-    self.versionTest("Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/0.9.7d", new Version("2.8.5rel.1","2","8"))
-    self.versionTest("Mozilla/6.0 (compatible; Konqueror/4.2; i686 FreeBSD 6.4; 20060308)", new Version("4.2", "4","2"))
-    self.versionTest("Mozilla/5.0 (compatible; Konqueror/3.1-rc5; i686 Linux; 20021219)", new Version("3.1-rc5","3","1"))
-    self.versionTest("Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.14) Gecko/2009090216 Ubuntu/9.04 (jaunty) Firefox/3.0.14", new Version("3.0.14","3","0"))
-    self.versionTest("Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 6.0 ; .NET CLR 2.0.50215; SL Commerce Client v1.0; Tablet PC 2.0", new Version("7.0b","7","0b")) // is minor here b or 0b?
-    self.versionTest("Opera/9.80 (Windows NT 5.2; U; en) Presto/2.2.15 Version/10.10", new Version("10.10", "10", "10"))
-    self.versionTest("Opera/8.0 (Macintosh; PPC Mac OS X; U; en)", new Version("8.0","8","0"))
-    self.versionTest("Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.558.0 Safari/534.10",new Version("8.0.558.0","8","0"))
-    self.versionTest("Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/540.0 (KHTML,like Gecko) Chrome/9.1.0.0 Safari/540.0", new Version("9.1.0.0","9","1"))
-    self.versionTest("Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-gb) AppleWebKit/523.10.6 (KHTML, like Gecko) Version/3.0.4 Safari/523.10.6", new Version("3.0.4","3","0"))
-    self.versionTest("Mozilla/5.0 (Linux; U; Android 2.1; en-us; Nexus One Build/ERD62) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17", new Version("4.0","4","0"))
-    self.versionTest("Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; GTB6.4; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 1.1.4322; .NET CLR 3.5.30729; .NET CLR 3.0.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0; MSOffice 14)", new Version("14","14","0"))
-    self.versionTest("Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; it; rv:1.8.1.21) Gecko/20090327 Camino/1.6.7 (MultiLang) (like Firefox/2.0.0.21pre)", new Version("1.6.7","1","6"))
-    self.versionTest("Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008100716 Firefox/3.0.3 Flock/2.0", new Version("2.0","2","0"))
-    self.versionTest("Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.17) Gecko/20080914 Thunderbird/2.0.0.17", new Version("2.0.0.17","2","0"))
-    self.versionTest("Mozilla/4.0 (compatible; Lotus-Notes/5.0; Windows-NT)", new Version("5.0","5","0"))
-    self.versionTest("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.13) Gecko/20100914 Mnenhy/0.8.3 SeaMonkey/2.0.8", new Version("2.0.8", "2", "0"))
+    # Lynx is not supported
+    # self.versionTest("Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/0.9.7d", Version("2.8.5rel.1","2","8"))
+    self.versionTest("Mozilla/6.0 (compatible; Konqueror/4.2; i686 FreeBSD 6.4; 20060308)", Version("4.2", "4","2"))
+    self.versionTest("Mozilla/5.0 (compatible; Konqueror/3.1-rc5; i686 Linux; 20021219)", Version("3.1-rc5","3","1"))
+    self.versionTest("Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.14) Gecko/2009090216 Ubuntu/9.04 (jaunty) Firefox/3.0.14", Version("3.0.14","3","0"))
+    self.versionTest("Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 6.0 ; .NET CLR 2.0.50215; SL Commerce Client v1.0; Tablet PC 2.0", Version("7.0b","7","0b")) # is minor here b or 0b?
+    self.versionTest("Opera/9.80 (Windows NT 5.2; U; en) Presto/2.2.15 Version/10.10", Version("10.10", "10", "10"))
+    self.versionTest("Opera/8.0 (Macintosh; PPC Mac OS X; U; en)", Version("8.0","8","0"))
+    self.versionTest("Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US) AppleWebKit/534.10 (KHTML, like Gecko) Chrome/8.0.558.0 Safari/534.10",Version("8.0.558.0","8","0"))
+    self.versionTest("Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/540.0 (KHTML,like Gecko) Chrome/9.1.0.0 Safari/540.0", Version("9.1.0.0","9","1"))
+    self.versionTest("Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-gb) AppleWebKit/523.10.6 (KHTML, like Gecko) Version/3.0.4 Safari/523.10.6", Version("3.0.4","3","0"))
+    self.versionTest("Mozilla/5.0 (Linux; U; Android 2.1; en-us; Nexus One Build/ERD62) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17", Version("4.0","4","0"))
+    self.versionTest("Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; GTB6.4; Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1) ; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 1.1.4322; .NET CLR 3.5.30729; .NET CLR 3.0.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0; MSOffice 14)", Version("14","14","0"))
+    self.versionTest("Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; it; rv:1.8.1.21) Gecko/20090327 Camino/1.6.7 (MultiLang) (like Firefox/2.0.0.21pre)", Version("1.6.7","1","6"))
+    self.versionTest("Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008100716 Firefox/3.0.3 Flock/2.0", Version("2.0","2","0"))
+    self.versionTest("Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.17) Gecko/20080914 Thunderbird/2.0.0.17", Version("2.0.0.17","2","0"))
+    self.versionTest("Mozilla/4.0 (compatible; Lotus-Notes/5.0; Windows-NT)", Version("5.0","5","0"))
+    self.versionTest("Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.13) Gecko/20100914 Mnenhy/0.8.3 SeaMonkey/2.0.8", Version("2.0.8", "2", "0"))
     self.versionTest("Mozilla/5.0 (SymbianOS/9.2; U; Series60/3.1 NokiaE90-1/07.24.0.3; Profile/MIDP-2.0 Configuration/CLDC-1.1 ) AppleWebKit/413 (KHTML, like Gecko) Safari/413 UP.Link/6.2.3.18.0",null)
-    self.versionTest("Mozilla/5.0 (compatible; Googlebot/2.1; http://www.google.com/bot.html)", null) // no version information for some browsers
-    self.versionTest("Mozilla/5.0 (Linux; U; Android-4.0.3; en-us; Xoom Build/IML77) AppleWebKit/535.7 (KHTML, like Gecko) CrMo/16.0.912.75 Safari/535.7", new Version("16.0.912.75", "16", "0"))
-    self.versionTest("Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us; Silk/1.1.0-80) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16 Silk-Accelerated=true", new Version("1.1.0-80", "1", "1"))
+    self.versionTest("Mozilla/5.0 (compatible; Googlebot/2.1; http:#www.google.com/bot.html)", null) # no version information for some browsers
+    self.versionTest("Mozilla/5.0 (Linux; U; Android-4.0.3; en-us; Xoom Build/IML77) AppleWebKit/535.7 (KHTML, like Gecko) CrMo/16.0.912.75 Safari/535.7", Version("16.0.912.75", "16", "0"))
+    self.versionTest("Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us; Silk/1.1.0-80) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16 Silk-Accelerated=true", Version("1.1.0-80", "1", "1"))
 
 
   def versionTest(self, ua, expectedVersion):
@@ -299,7 +304,8 @@ class BrowserTest(unittest.TestCase):
     self.agentTest(ieMobile7, Browser.IEMOBILE7)
     self.agentTest(ieMobile9, Browser.IEMOBILE9)
     self.agentTest(lotusNotes, Browser.LOTUS_NOTES)
-    self.agentTest(lynxClient, Browser.LYNX)
+    # Lynx is not supported
+    #self.agentTest(lynxClient, Browser.LYNX)
     self.agentTest(konqueror, Browser.KONQUEROR)
     self.agentTest(chromeMobile, Browser.CHROME_MOBILE)
     self.agentTest(chrome, Browser.CHROME)
@@ -335,7 +341,7 @@ class BrowserTest(unittest.TestCase):
     self.agentTest(thunderbird2, Browser.THUNDERBIRD2)
     self.agentTest(silk, Browser.SILK)
 
-  def self.agentTest(self, agentStrings, expectedBrowser):
+  def agentTest(self, agentStrings, expectedBrowser):
     for agentString in agentStrings:
       assertEquals(expectedBrowser, Browser.parseUserAgentString(agentString))
 
@@ -355,7 +361,7 @@ class BrowserTest(unittest.TestCase):
     retrievedIdValues = []
 
     for browser in Browser.values():
-      assertTrue(browser.toString(),!retrievedIdValues.contains(browser.getId()))
+      assertTrue(browser.toString(), not retrievedIdValues.contains(browser.getId()))
       retrievedIdValues.add(browser.getId())
 
   if __name__ == '__main__':

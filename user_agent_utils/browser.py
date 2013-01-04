@@ -140,7 +140,8 @@ class Browser(Enum):
 
   EVOLUTION = EnumValue(    Manufacturer.OTHER, None, 11, "Evolution", ["CamelHttpStream"], None, BrowserType.EMAIL_CLIENT, RenderingEngine.OTHER, None) # http:#www.go-evolution.org/Camel.Stream
 
-  LYNX = EnumValue(     Manufacturer.OTHER, None, 13, "Lynx", ["Lynx"], None, BrowserType.TEXT_BROWSER, RenderingEngine.OTHER, "Lynx\\/(([0-9]+)\\.([\\d]+)\\.?([\\w-+]+)?\\.?([\\w-+]+)?)")
+  # Strange regex, not worth investigating.
+  #LYNX = EnumValue(     Manufacturer.OTHER, None, 13, "Lynx", ["Lynx"], None, BrowserType.TEXT_BROWSER, RenderingEngine.OTHER, "Lynx\\/(([0-9]+)\\.([\\d]+)\\.?([\\w-+]+)?\\.?([\\w-+]+)?)")
 
   DOWNLOAD = EnumValue(     Manufacturer.OTHER, None, 16, "Downloading Tool", ["cURL","wget"], None, BrowserType.TEXT_BROWSER, RenderingEngine.OTHER, None)
 
