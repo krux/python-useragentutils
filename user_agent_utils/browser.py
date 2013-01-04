@@ -2,11 +2,22 @@ from utilities import Enum, EnumValue, setProperties
 from manufacturer import Manufacturer
 from rendering_engine import RenderingEngine
 from browser_type import BrowserType
+import re
+
+# Find any of the values in array of strings, case insensitive.
+def findAnyCaseInsensitive(arr):
+  arr = arr or []
+  return re.compile('|'.join(map(re.escape, arr)), re.I).search
 
 class Browser(Enum):
 
   def __init__(self, manufacturer, parent, versionId, name, aliases, exclude, browserType, renderingEngine, versionRegexString):
     setProperties(**locals())
+    self._versionRegEx = re.compile(versionRegexString) if versionRegexString else None
+
+    # find any alias, case-insensitive
+    self.isInUserAgentString = findAnyCaseInsensitive(aliases)
+    self.containsExcludeToken = findAnyCaseInsensitive(exclude)
 
   OPERA = EnumValue(      Manufacturer.OPERA, None, 1, "Opera", [ "Opera" ], None, BrowserType.WEB_BROWSER, RenderingEngine.PRESTO, "Opera\\/(([\\d]+)\\.([\\w]+))")   # before MSIE
   OPERA_MINI = EnumValue(   Manufacturer.OPERA, OPERA, 20, "Opera Mini", [ "Opera Mini"], None, BrowserType.MOBILE_BROWSER, RenderingEngine.PRESTO, None) # Opera for mobile devices
@@ -146,5 +157,31 @@ class Browser(Enum):
   DOWNLOAD = EnumValue(     Manufacturer.OTHER, None, 16, "Downloading Tool", ["cURL","wget"], None, BrowserType.TEXT_BROWSER, RenderingEngine.OTHER, None)
 
   UNKNOWN = EnumValue(    Manufacturer.OTHER, None, 14, "Unknown", [], None, BrowserType.UNKNOWN, RenderingEngine.OTHER, None )
+
+  @property
+  def group(self):
+    return self.parent.group() if self.parent else self
+
+  @property
+  def versionRegEx(self):
+    if self._versionRegEx:
+      return self._versionRegEx
+    if self.group is not self:
+      return self.group.versionRegEx
+    return None
+
+  @property
+  def version(self, userAgentString):
+    pattern = self.versionRegEx
+    if userAgentString and pattern:
+      match = pattern.search(userAgentString)
+      if match:
+        full, major = match.group(0, 1)
+        minor = match.group(2) if match.lastindex > 1 else "0"
+
+  #def checkUserAgent(self, userAgentString):
+
+
+
 
 
