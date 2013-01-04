@@ -1,6 +1,6 @@
 class Base(object):
   def __eq__(self, other):
-    return self is other or self.__dict__ == other.__dict__
+    return self is other or hasattr(other, "__dict__") and self.__dict__ == other.__dict__
 
 def setProperties(self, **kwargs):
   for name, val in kwargs.items():
@@ -23,7 +23,7 @@ class EnumValue(object):
 # Establish enums based on
 class EnumMeta(type):
   def __init__(cls, name, bases, dct):
-    cls.values = {}
+    cls.values = []
     values = [(name, value) for name, value in dct.items() if isinstance(value, EnumValue)]
     values.sort(key = lambda (key, val): val._id)
 
@@ -33,7 +33,7 @@ class EnumMeta(type):
       value.actual = actual = cls(*value.args, **value.kwargs)
       actual._name = name
 
-      cls.values[name] = actual
+      cls.values.append(actual)
       setattr(cls, name, actual)
 
   @classmethod
@@ -49,6 +49,9 @@ class Enum(object):
   __metaclass__ = EnumMeta
 
   def __repr__(self):
+    return "<"+ type(self).__name__ + ":" + self._name + ">"
+
+  def __str__(self):
     return "<"+ type(self).__name__ + ":" + self._name + ">"
 
 

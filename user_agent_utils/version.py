@@ -11,3 +11,6 @@ class Version(util.Base):
   def __str__(self):
     return self.version
 
+  def __repr__(self):
+    return "<"+ type(self).__name__ + ":" + self.majorVersion + "." + self.minorVersion + ">"
+

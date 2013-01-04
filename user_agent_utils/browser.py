@@ -2,22 +2,28 @@ from utilities import Enum, EnumValue, setProperties
 from manufacturer import Manufacturer
 from rendering_engine import RenderingEngine
 from browser_type import BrowserType
+from version import Version
 import re
 
 # Find any of the values in array of strings, case insensitive.
 def findAnyCaseInsensitive(arr):
   arr = arr or []
-  return re.compile('|'.join(map(re.escape, arr)), re.I).search
+  return re.compile('|'.join(map(re.escape, arr)), re.I)
 
 class Browser(Enum):
 
   def __init__(self, manufacturer, parent, versionId, name, aliases, exclude, browserType, renderingEngine, versionRegexString):
     setProperties(**locals())
+    self.id = (manufacturer.id << 8) + versionId
+    self.children = []
+    if parent:
+      parent.children.append(self)
     self._versionRegEx = re.compile(versionRegexString) if versionRegexString else None
 
     # find any alias, case-insensitive
-    self.isInUserAgentString = findAnyCaseInsensitive(aliases)
-    self.containsExcludeToken = findAnyCaseInsensitive(exclude)
+    self.aliasRgx = findAnyCaseInsensitive(aliases)
+    if exclude:
+      self.excludeRgx = findAnyCaseInsensitive(exclude)
 
   OPERA = EnumValue(      Manufacturer.OPERA, None, 1, "Opera", [ "Opera" ], None, BrowserType.WEB_BROWSER, RenderingEngine.PRESTO, "Opera\\/(([\\d]+)\\.([\\w]+))")   # before MSIE
   OPERA_MINI = EnumValue(   Manufacturer.OPERA, OPERA, 20, "Opera Mini", [ "Opera Mini"], None, BrowserType.MOBILE_BROWSER, RenderingEngine.PRESTO, None) # Opera for mobile devices
@@ -160,7 +166,7 @@ class Browser(Enum):
 
   @property
   def group(self):
-    return self.parent.group() if self.parent else self
+    return self.parent.group if self.parent else self
 
   @property
   def versionRegEx(self):
@@ -170,18 +176,39 @@ class Browser(Enum):
       return self.group.versionRegEx
     return None
 
-  @property
   def version(self, userAgentString):
     pattern = self.versionRegEx
     if userAgentString and pattern:
       match = pattern.search(userAgentString)
       if match:
-        full, major = match.group(0, 1)
-        minor = match.group(2) if match.lastindex > 1 else "0"
+        full, major = match.group(1, 2)
+        minor = match.group(3) if len(match.groups()) > 2 else "0"
+        return Version(full, major, minor)
 
-  #def checkUserAgent(self, userAgentString):
+  def isInUserAgentString(self, userAgentString):
+    return self.aliasRgx.search(userAgentString)
 
+  def containsExcludeToken(self, userAgentString):
+    if hasattr(self, 'excludeRgx'):
+      return self.excludeRgx.search(userAgentString)
 
+  def checkUserAgent(self, userAgentString):
+    if self.isInUserAgentString(userAgentString):
+      for child in self.children:
+        browser = child.checkUserAgent(userAgentString)
+        if browser:
+          return browser
+      if not self.containsExcludeToken(userAgentString):
+        return self
+
+  @classmethod
+  def parseUserAgentString(self, userAgentString):
+    for value in Browser.values:
+      if not value.parent:
+        browser = value.checkUserAgent(userAgentString)
+        if browser:
+          return browser
+    return Browser.UNKNOWN
 
 
 
