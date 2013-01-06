@@ -2,19 +2,13 @@ from base_product import BaseProduct
 from manufacturer import Manufacturer
 from rendering_engine import RenderingEngine
 from browser_type import BrowserType
-from utilities import Enum, EnumValue, setProperties
-from version import Version
-import re
+from utilities import EnumValue
 
 # replace:
 #  (.*?)\(\s*(.*?),\s*(.*?),\s*(.*?),\s*(.*?),\s*(.*?\]),\s*(.*?),\s*(.*?),\s*(.*?),\s*(.*)\),[ ]*(.*)
 # with:
 #  $11\n  $1 = EnumValue(\n    manufacturer = $2,\n    parent = $3,\n    versionId = $4,\n    name = $5,\n    aliases = $6,\n    exclude = $7,\n    browserType = $8,\n    renderingEngine = $9,\n    versionRegexString = $10)\n
 
-# Find any of the values in array of strings, case insensitive.
-def findAnyCaseInsensitive(arr):
-  arr = arr or []
-  return re.compile('|'.join(map(re.escape, arr)), re.I)
 
 class Browser(BaseProduct):
   required = ["browserType", "renderingEngine"]

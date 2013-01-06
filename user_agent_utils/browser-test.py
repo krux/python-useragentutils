@@ -1,5 +1,6 @@
 from browser import Browser
 from version import Version
+from operating_system import OperatingSystem
 
 import unittest
 
