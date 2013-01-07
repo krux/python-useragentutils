@@ -1,11 +1,13 @@
+from utilities import Base
+from browser import Browser
+from operating_system import OperatingSystem
 
-def go():
-  import browser as b
-  print(b.Browser.IE.__dict__)
-  print(b.Browser.IE6.__dict__)
+class UserAgent(Base):
+  def __init__(self, userAgentString):
+    self.userAgentString = userAgentString
+    self.browser = Browser.parseUserAgentString(userAgentString)
 
-if __name__=="__main__":
-  import browser as b
-  print(b.Browser.IE.__dict__)
-  print(b.Browser.IE6.__dict__)
+    self.operatingSystem = OperatingSystem.UNKNOWN
+    if browser is not Browser.BOT:
+      self.operatingSystem = OperatingSystem.parseUserAgentString(userAgentString)
 
