@@ -7,6 +7,6 @@ setup(
   description = "Python port of the Java user-agent-utils lib",
   author='Derek Brans',
   author_email='dbrans@gmail.com',
-  url='https://github.com/krux/python-user-agent-utils',
+  url='https://github.com/krux/python-useragentutils',
   classifiers=[]
 )
