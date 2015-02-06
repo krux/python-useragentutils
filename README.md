@@ -29,3 +29,35 @@ print(os.version(uaString))
 print(os.manufacturer)
 print(os.deviceType)
 ```
+
+## Developing
+
+Setup vagrant in the usual way (see: [vagrant-setup](https://github.com/krux/vagrant-setup)).
+
+Setup your environment:
+
+```shell
+cd $PROJECT_DIR
+mkvirtualenv python-useragentutils
+setvirtualenvproject .
+pip install --upgrade pip==1.4.1
+pip install -r requirements.pip
+```
+
+Run the tests:
+
+```shell
+nosetests
+```
+
+Write some code including tests..
+
+Run the tests:
+```shell
+nosetests
+```
+
+File PRs against master w/ a new semantic version. When it merges jenkins will put the package in our pip repo.
+
+Testing
+Testing
