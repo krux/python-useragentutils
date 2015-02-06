@@ -59,3 +59,4 @@ nosetests
 
 File PRs against master w/ a new semantic version. When it merges jenkins will put the package in our pip repo.
 
+Testing
