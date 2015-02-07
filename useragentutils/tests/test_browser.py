@@ -37,6 +37,11 @@ ie10clients = [
     'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)'
 ]
 
+ie11clients = [
+    'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko',
+    'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; ASU2JS; rv:11.0) like Gecko'
+]
+
 ie55clients = [
     'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0; .NET CLR 1.1.4322)',
     'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0)',
@@ -389,6 +394,7 @@ class BrowserTest(unittest.TestCase):
         self.agentTest(ie8clients, Browser.IE8)
         self.agentTest(ie9clients, Browser.IE9)
         self.agentTest(ie10clients, Browser.IE10)
+        self.agentTest(ie11clients, Browser.IE11)
         self.agentTest(ieTooOld, Browser.IE)
         self.agentTest(outlook2007, Browser.OUTLOOK2007)
         self.agentTest(outlook2010, Browser.OUTLOOK2010)
