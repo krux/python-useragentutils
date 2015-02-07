@@ -195,6 +195,19 @@ class Browser(BaseProduct):
         renderingEngine=RenderingEngine.TRIDENT,
         versionRegexString=None)
 
+# 		IE11(			Manufacturer.MICROSOFT, Browser.IE, 95, "Internet Explorer 11", new String[] { "Trident/7", "IE 11." }, new String[] {"MSIE 7"}, BrowserType.WEB_BROWSER, RenderingEngine.TRIDENT, "(?:Trident\\/7|IE)(?:\\.[0-9]*;)?(?:.*rv:| )(([0-9]+)\\.?([0-9]+))" ),   // before Mozilla
+    # before Mozilla
+    IE11 = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=IE,
+        versionId=95,
+        name='Internet Explorer 11',
+        aliases=['Trident/7', 'IE 11.'],
+        exclude=['MSIE 7'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.TRIDENT,
+        versionRegexString=r'(?:Trident\/7|IE)(?:\.[0-9]*;)?(?:.*rv:| )(([0-9]+)\.?([0-9]+))')
+
     # before MSIE
     IE10 = EnumValue(
         manufacturer=Manufacturer.MICROSOFT,
@@ -988,19 +1001,6 @@ class Browser(BaseProduct):
         browserType=BrowserType.EMAIL_CLIENT,
         renderingEngine=RenderingEngine.OTHER,
         versionRegexString=None)
-
-    # Strange regex, not worth investigating.
-
-    # LYNX = EnumValue(
-    #   manufacturer = Manufacturer.OTHER,
-    #   parent = None,
-    #   versionId = 13,
-    #   name = 'Lynx',
-    #   aliases = ['Lynx'],
-    #   exclude = None,
-    #   browserType = BrowserType.TEXT_BROWSER,
-    #   renderingEngine = RenderingEngine.OTHER,
-    #   versionRegexString = 'Lynx\\/(([0-9]+)\\.([\\d]+)\\.?([\\w-+]+)?\\.?([\\w-+]+)?)')
 
     DOWNLOAD = EnumValue(
         manufacturer=Manufacturer.OTHER,

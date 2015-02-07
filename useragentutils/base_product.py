@@ -73,9 +73,8 @@ class BaseProduct(Enum):
     @classmethod
     def parseUserAgentString(self, userAgentString):
         for value in self.values:
-            if not value.parent:
-                value = value.checkUserAgent(userAgentString)
-                if value:
-                    return value
+            value = value.checkUserAgent(userAgentString)
+            if value:
+                return value
         return self.UNKNOWN
 
