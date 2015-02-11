@@ -98,12 +98,6 @@ lotusNotes = [
     'Mozilla/4.0 (compatible; Lotus-Notes/6.0; Windows-NT)'
 ]
 
-# Not supported
-# lynxClient = [
-# 'Lynx/2.8.5rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/0.9.7d',
-#   'Lynx/2.7.1ac-0.102+intl+csuite libwww-FM/2.14'
-# ]
-
 konqueror = [
     'Mozilla/5.0 (compatible; konqueror/3.3; linux 2.4.21-243-smp4G) (KHTML, like Geko)',
     'Mozilla/6.0 (compatible; Konqueror/4.2; i686 FreeBSD 6.4; 20060308)',
@@ -158,6 +152,11 @@ chrome14 = [
     'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.815.0 Safari/535.1'
 ]
 
+chrome40 = [
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 ' +
+    'Safari/537.36'
+]
+
 firefox3 = [
     'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.14) Gecko/2009090216 Ubuntu/9.04 (jaunty) Firefox/3.0.14'
 ]
@@ -176,6 +175,10 @@ firefox6 = [
     'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:6.0a2) Gecko/20110612 Firefox/6.0a2'
 ]
 
+firefox35 = [
+    'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/35.0'
+]
+
 firefox3mobile = [
     'Mozilla/5.0 (X11; U; Linux armv7l; en-US; rv:1.9.2a1pre) Gecko/20091127 Firefox/3.5 Maemo Browser 1.5.6 RX-51 N900'
 ]
@@ -185,6 +188,11 @@ safari = [
     'Safari/525.28.3',
     'Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-gb) AppleWebKit/523.10.6 (KHTML, like Gecko) Version/3.0.4 '
     'Safari/523.10.6'
+]
+
+safari8 = [
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/600.3.18 (KHTML, like Gecko) Version/8.0.3 ' +
+    'Safari/600.3.18'
 ]
 
 safari5 = [
@@ -257,6 +265,11 @@ opera9 = [
 opera10 = [
     'Opera/9.80 (Windows NT 5.2; U; en) Presto/2.2.15 Version/10.10',
     'Opera/9.80 (Macintosh; Intel Mac OS X; U; en) Presto/2.6.30 Version/10.61'
+]
+
+opera26 = [
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 ' +
+    'Safari/537.36 OPR/26.0.1656.60'
 ]
 
 operaMini = [
@@ -413,19 +426,23 @@ class BrowserTest(unittest.TestCase):
         self.agentTest(chrome12, Browser.CHROME12)
         self.agentTest(chrome13, Browser.CHROME13)
         self.agentTest(chrome14, Browser.CHROME14)
+        self.agentTest(chrome40, Browser.CHROME40)
         self.agentTest(firefox3, Browser.FIREFOX3)
         self.agentTest(firefox4, Browser.FIREFOX4)
         self.agentTest(firefox5, Browser.FIREFOX5)
         self.agentTest(firefox6, Browser.FIREFOX6)
+        self.agentTest(firefox35, Browser.FIREFOX35)
         self.agentTest(firefox3mobile, Browser.FIREFOX3MOBILE)
         self.agentTest(safari, Browser.SAFARI)
         self.agentTest(dolfin, Browser.DOLFIN2)
+        self.agentTest(safari8, Browser.SAFARI8)
         self.agentTest(safari5, Browser.SAFARI5)
         self.agentTest(safari4, Browser.SAFARI4)
         self.agentTest(mobileSafari, Browser.MOBILE_SAFARI)
         self.agentTest(appleMail, Browser.APPLE_MAIL)
         self.agentTest(omniWeb, Browser.OMNIWEB)
         self.agentTest(operaMini, Browser.OPERA_MINI)
+        self.agentTest(opera26, Browser.OPERA26)
         self.agentTest(opera9, Browser.OPERA9)
         self.agentTest(opera, Browser.OPERA)
         self.agentTest(opera10, Browser.OPERA10)

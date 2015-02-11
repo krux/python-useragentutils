@@ -216,7 +216,19 @@ windows7 = [
     '.NET CLR 3.0.30729 Media Center PC 6.0 MDDC MSOffice 12)',
     'Mozilla/4.0 (compatible MSIE 8.0 Windows NT 6.1 Trident/4.0 Mozilla/4.0 (compatible MSIE 6.0 Windows NT 5.1 SV1) '
     ' SLCC2 .NET CLR 2.0.50727 .NET CLR 3.5.30729 .NET CLR 3.0.30729 Media Center PC 6.0 Media Center PC 5.0 SLCC1 '
-    'InfoPath.2)'
+    'InfoPath.2)',
+    'Mozilla/5.0 (Windows NT 6.1; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; ' +
+    'Media Center PC 6.0; .NET4.0C; rv:11.0) like Gecko'
+]
+
+windows8 = [
+    'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)',
+    'Mozilla/5.0 (Windows NT 6.2; WOW64; Trident/7.0; rv:11.0) like Gecko',
+]
+
+windows81 = [
+    'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko',
+    'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; ASU2JS; rv:11.0) like Gecko'
 ]
 
 windowsMobile7 = [
@@ -274,6 +286,8 @@ class OperatingSystemTest(unittest.TestCase):
         self.agentTest(windowsCEdivices, OperatingSystem.WINDOWS_MOBILE)
         self.agentTest(windowsMobile7, OperatingSystem.WINDOWS_MOBILE7)
         self.agentTest(windowsVista, OperatingSystem.WINDOWS_VISTA)
+        self.agentTest(windows81, OperatingSystem.WINDOWS_81)
+        self.agentTest(windows8, OperatingSystem.WINDOWS_8)
         self.agentTest(windows7, OperatingSystem.WINDOWS_7)
         self.agentTest(windowsXP, OperatingSystem.WINDOWS_XP)
         self.agentTest(windows98, OperatingSystem.WINDOWS_98)
@@ -337,4 +351,3 @@ class OperatingSystemTest(unittest.TestCase):
     def agentTest(self, agentStrings, expectedOperatingSystem):
         for agentString in agentStrings:
             self.assertEquals(expectedOperatingSystem, OperatingSystem.parseUserAgentString(agentString))
-
