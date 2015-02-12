@@ -42,6 +42,11 @@ class RenderingEngine(Enum):
     KHTML = EnumValue('KHTML')
 
     ##
+    # Layout engine for Chrome and Opera from 2013 onwards
+    ##
+    BLINK = EnumValue('Blink')
+
+    ##
     # Other or unknown layout engine.
     ##
     OTHER = EnumValue('Other')

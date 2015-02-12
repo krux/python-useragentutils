@@ -27,6 +27,28 @@ class OperatingSystem(BaseProduct):
         deviceType=DeviceType.COMPUTER,
         versionRegexString=None)
 
+    WINDOWS_81 = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=WINDOWS,
+        versionId=23,
+        name='Windows 8.1',
+        aliases=['Windows NT 6.3'],
+        exclude=None,
+        deviceType=DeviceType.COMPUTER,
+        versionRegexString=None
+    )
+
+    WINDOWS_8 = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=WINDOWS,
+        versionId=22,
+        name='Windows 8',
+        aliases=['Windows NT 6.2'],
+        exclude=None,
+        deviceType=DeviceType.COMPUTER,
+        versionRegexString=None
+    )
+
     # before Win, yes, Windows 7 is called 6.1 LOL
     WINDOWS_7 = EnumValue(
         manufacturer=Manufacturer.MICROSOFT,

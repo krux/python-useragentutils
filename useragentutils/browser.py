@@ -4,12 +4,6 @@ from rendering_engine import RenderingEngine
 from browser_type import BrowserType
 from utilities import EnumValue
 
-# replace:
-# (.*?)\(\s*(.*?),\s*(.*?),\s*(.*?),\s*(.*?),\s*(.*?\]),\s*(.*?),\s*(.*?),\s*(.*?),\s*(.*)\),[ ]*(.*)
-# with:
-# $11\n  $1 = EnumValue(\n    manufacturer = $2,\n    parent = $3,\n    versionId = $4,\n    name = $5,\n    aliases
-#  = $6,\n    exclude = $7,\n    browserType = $8,\n    renderingEngine = $9,\n    versionRegexString = $10)\n
-
 
 class Browser(BaseProduct):
     required = ['browserType', 'renderingEngine']
@@ -40,8 +34,142 @@ class Browser(BaseProduct):
 
     ##
     # For some strange reason Opera uses 9.80 in the user-agent string and otherwise it is very inconsistent. Use the
-    #  getVersion method if you really want to know which version it is.
+    # getVersion method if you really want to know which version it is.
     ##
+
+    OPERA26 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=21,
+        name='Opera 26',
+        aliases=['OPR/26'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA25 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=22,
+        name='Opera 25',
+        aliases=['OPR/25'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA24 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=23,
+        name='Opera 24',
+        aliases=['OPR/24'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA23 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=24,
+        name='Opera 23',
+        aliases=['OPR/23'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA22 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=25,
+        name='Opera 22',
+        aliases=['OPR/22'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA21 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=26,
+        name='Opera 21',
+        aliases=['OPR/21'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA20 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=27,
+        name='Opera 20',
+        aliases=['OPR/20'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA19 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=28,
+        name='Opera 19',
+        aliases=['OPR/19'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA18 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=29,
+        name='Opera 18',
+        aliases=['OPR/18'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA17 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=30,
+        name='Opera 17',
+        aliases=['OPR/17'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA16 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=31,
+        name='Opera 16',
+        aliases=['OPR/16'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    OPERA15 = EnumValue(
+        manufacturer=Manufacturer.OPERA,
+        parent=OPERA,
+        versionId=32,
+        name='Opera 15',
+        aliases=['OPR/15'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=r'OPR/(([\d]+)\.([\w]+)?(\.[\w]+)?(\.[\w]+)?)')
+
+    # Skipping 11-14 b/c they're rarely in the wild these days.
 
     OPERA10 = EnumValue(
         manufacturer=Manufacturer.OPERA,
@@ -195,7 +323,6 @@ class Browser(BaseProduct):
         renderingEngine=RenderingEngine.TRIDENT,
         versionRegexString=None)
 
-# 		IE11(			Manufacturer.MICROSOFT, Browser.IE, 95, "Internet Explorer 11", new String[] { "Trident/7", "IE 11." }, new String[] {"MSIE 7"}, BrowserType.WEB_BROWSER, RenderingEngine.TRIDENT, "(?:Trident\\/7|IE)(?:\\.[0-9]*;)?(?:.*rv:| )(([0-9]+)\\.?([0-9]+))" ),   // before Mozilla
     # before Mozilla
     IE11 = EnumValue(
         manufacturer=Manufacturer.MICROSOFT,
@@ -302,10 +429,262 @@ class Browser(BaseProduct):
         versionId=1,
         name='Chrome',
         aliases=['Chrome'],
-        exclude=None,
+        exclude=['OPR/', 'Web Preview'],
         browserType=BrowserType.WEB_BROWSER,
         renderingEngine=RenderingEngine.WEBKIT,
         versionRegexString='Chrome\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\.[\\w]+)?)')
+
+    # before Mozilla
+    CHROME40 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=44,
+        name='Chrome 40',
+        aliases=['Chrome/40'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME39 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=43,
+        name='Chrome 39',
+        aliases=['Chrome/39'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME38 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=42,
+        name='Chrome 38',
+        aliases=['Chrome/38'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME37 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=41,
+        name='Chrome 37',
+        aliases=['Chrome/37'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME36 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=40,
+        name='Chrome 36',
+        aliases=['Chrome/36'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME35 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=39,
+        name='Chrome 35',
+        aliases=['Chrome/35'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME34 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=38,
+        name='Chrome 34',
+        aliases=['Chrome/34'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME33 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=37,
+        name='Chrome 33',
+        aliases=['Chrome/33'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME32 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=36,
+        name='Chrome 32',
+        aliases=['Chrome/32'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME31 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=35,
+        name='Chrome 31',
+        aliases=['Chrome/31'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME30 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=34,
+        name='Chrome 30',
+        aliases=['Chrome/30'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME29 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=45,
+        name='Chrome 29',
+        aliases=['Chrome/29'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME28 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=33,
+        name='Chrome 28',
+        aliases=['Chrome/28'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.BLINK,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME27 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=32,
+        name='Chrome 27',
+        aliases=['Chrome/27'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME26 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=31,
+        name='Chrome 26',
+        aliases=['Chrome/26'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME25 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=30,
+        name='Chrome 25',
+        aliases=['Chrome/25'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME24 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=29,
+        name='Chrome 24',
+        aliases=['Chrome/24'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME23 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=28,
+        name='Chrome 23',
+        aliases=['Chrome/23'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME22 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=27,
+        name='Chrome 22',
+        aliases=['Chrome/22'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME21 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=26,
+        name='Chrome 21',
+        aliases=['Chrome/21'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before Mozilla
+    CHROME20 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=CHROME,
+        versionId=25,
+        name='Chrome 20',
+        aliases=['Chrome/20'],
+        exclude=['OPR/', 'Web Preview'],
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
 
     # before Mozilla
     CHROME19 = EnumValue(
@@ -470,7 +849,7 @@ class Browser(BaseProduct):
         versionId=1,
         name='Safari',
         aliases=['Safari', 'iphone', 'ipad'],
-        exclude=None,
+        exclude=['OPR/', 'Web Preview', 'Googlebot-Mobile'],
         browserType=BrowserType.WEB_BROWSER,
         renderingEngine=RenderingEngine.WEBKIT,
         versionRegexString='Version\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?)')
@@ -511,10 +890,46 @@ class Browser(BaseProduct):
         versionRegexString='Silk\\/(([0-9]+)\\.?([\\w]+)?(\\.[\\w]+)?(\\-[\\w]+)?)')
 
     # before AppleWebKit
+    SAFARI8 = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=SAFARI,
+        versionId=8,
+        name='Safari 8',
+        aliases=['Version/8'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before AppleWebKit
+    SAFARI7 = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=SAFARI,
+        versionId=7,
+        name='Safari 7',
+        aliases=['Version/7'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before AppleWebKit
+    SAFARI6 = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=SAFARI,
+        versionId=6,
+        name='Safari 6',
+        aliases=['Version/6'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.WEBKIT,
+        versionRegexString=None)
+
+    # before AppleWebKit
     SAFARI5 = EnumValue(
         manufacturer=Manufacturer.APPLE,
         parent=SAFARI,
-        versionId=3,
+        versionId=5,
         name='Safari 5',
         aliases=['Version/5'],
         exclude=None,
@@ -553,7 +968,7 @@ class Browser(BaseProduct):
         versionId=50,
         name='Apple Mail',
         aliases=['AppleWebKit'],
-        exclude=None,
+        exclude=['OPR/'],
         browserType=BrowserType.EMAIL_CLIENT,
         renderingEngine=RenderingEngine.WEBKIT,
         versionRegexString=None)
@@ -737,6 +1152,259 @@ class Browser(BaseProduct):
         aliases=['Firefox/3.5 Maemo'],
         exclude=None,
         browserType=BrowserType.MOBILE_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX36 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=135,
+        name='Firefox 36',
+        aliases=['Firefox/36'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX35 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=128,
+        name='Firefox 35',
+        aliases=['Firefox/35'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX34 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=127,
+        name='Firefox 34',
+        aliases=['Firefox/34'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX33 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=126,
+        name='Firefox 33',
+        aliases=['Firefox/33'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX32 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=125,
+        name='Firefox 32',
+        aliases=['Firefox/32'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX31 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=124,
+        name='Firefox 31',
+        aliases=['Firefox/31'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX30 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=123,
+        name='Firefox 30',
+        aliases=['Firefox/30'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX29 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=122,
+        name='Firefox 29',
+        aliases=['Firefox/29'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX28 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=121,
+        name='Firefox 28',
+        aliases=['Firefox/28'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX27 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=129,
+        name='Firefox 27',
+        aliases=['Firefox/27'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX26 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=119,
+        name='Firefox 26',
+        aliases=['Firefox/26'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX25 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=118,
+        name='Firefox 25',
+        aliases=['Firefox/25'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX24 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=117,
+        name='Firefox 24',
+        aliases=['Firefox/24'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX23 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=116,
+        name='Firefox 23',
+        aliases=['Firefox/23'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX22 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=115,
+        name='Firefox 22',
+        aliases=['Firefox/22'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX21 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=114,
+        name='Firefox 21',
+        aliases=['Firefox/21'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX20 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=113,
+        name='Firefox 20',
+        aliases=['Firefox/20'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX19 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=112,
+        name='Firefox 19',
+        aliases=['Firefox/19'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX18 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=111,
+        name='Firefox 18',
+        aliases=['Firefox/18'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX17 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=131,
+        name='Firefox 17',
+        aliases=['Firefox/17'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX16 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=109,
+        name='Firefox 16',
+        aliases=['Firefox/16'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX15 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=108,
+        name='Firefox 15',
+        aliases=['Firefox/15'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX14 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=107,
+        name='Firefox 14',
+        aliases=['Firefox/14'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
         renderingEngine=RenderingEngine.GECKO,
         versionRegexString=None)
 
