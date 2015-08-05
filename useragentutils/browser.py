@@ -323,6 +323,17 @@ class Browser(BaseProduct):
         renderingEngine=RenderingEngine.TRIDENT,
         versionRegexString=None)
 
+    EDGE12 = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=None,
+        versionId=96,
+        name='Edge',
+        aliases=['Edge/12'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.EDGEHTML,
+        versionRegexString='Edge\\/(\\d+)\\.(\\d+)')
+
     # before Mozilla
     IE11 = EnumValue(
         manufacturer=Manufacturer.MICROSOFT,

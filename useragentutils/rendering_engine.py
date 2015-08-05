@@ -11,6 +11,12 @@ class RenderingEngine(Enum):
     TRIDENT = EnumValue('Trident')
 
     ##
+    # EdgeHTML is a proprietary layout engine developed for the Microsoft Edge web browser
+    # Trident fork
+    ##
+    EDGEHTML = EnumValue('EdgeHTML')
+
+    ##
     # HTML parsing and rendering engine of Microsoft Office Word, used by some other products of the Office suite
     # instead of Trident.
     ##
