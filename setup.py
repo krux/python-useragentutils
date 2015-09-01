@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='useragentutils',
     packages=['useragentutils'],
-    version='0.2.2',
+    version='0.2.3',
     description='Python port of the Java user-agent-utils lib',
     author='Derek Brans',
     author_email='dbrans@gmail.com',
