@@ -48,9 +48,3 @@ nosetests.xml
 
 # Coverage and results
 *.xml
-
-# vagrant
-.enc/
-
-# apple
-.DS_STORE
