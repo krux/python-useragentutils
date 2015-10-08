@@ -184,6 +184,10 @@ firefox35 = [
     'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/35.0'
 ]
 
+firefox41 = [
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:41.0) Gecko/20100101 Firefox/41.0'
+]
+
 firefox3mobile = [
     'Mozilla/5.0 (X11; U; Linux armv7l; en-US; rv:1.9.2a1pre) Gecko/20091127 Firefox/3.5 Maemo Browser 1.5.6 RX-51 N900'
 ]
@@ -413,7 +417,7 @@ class BrowserTest(unittest.TestCase):
         self.agentTest(ie9clients, Browser.IE9)
         self.agentTest(ie10clients, Browser.IE10)
         self.agentTest(ie11clients, Browser.IE11)
-        self.agentTest(edge12clients, Browser.EDGE12)
+        self.agentTest(edge12clients, Browser.EDGE)
         self.agentTest(ieTooOld, Browser.IE)
         self.agentTest(outlook2007, Browser.OUTLOOK2007)
         self.agentTest(outlook2010, Browser.OUTLOOK2010)
@@ -438,6 +442,7 @@ class BrowserTest(unittest.TestCase):
         self.agentTest(firefox5, Browser.FIREFOX5)
         self.agentTest(firefox6, Browser.FIREFOX6)
         self.agentTest(firefox35, Browser.FIREFOX35)
+        self.agentTest(firefox41, Browser.FIREFOX41)
         self.agentTest(firefox3mobile, Browser.FIREFOX3MOBILE)
         self.agentTest(safari, Browser.SAFARI)
         self.agentTest(dolfin, Browser.DOLFIN2)
