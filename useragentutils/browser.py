@@ -334,17 +334,6 @@ class Browser(BaseProduct):
         renderingEngine=RenderingEngine.EDGEHTML,
         versionRegexString='Edge\\/(([0-9]+)\\.([0-9]+))')
 
-    EDGE12 = EnumValue(
-        manufacturer=Manufacturer.MICROSOFT,
-        parent=EDGE,
-        versionId=97,
-        name='Edge 12',
-        aliases=['Edge/12'],
-        exclude=None,
-        browserType=BrowserType.WEB_BROWSER,
-        renderingEngine=RenderingEngine.EDGEHTML,
-        versionRegexString=None)
-
     # before Mozilla
     IE11 = EnumValue(
         manufacturer=Manufacturer.MICROSOFT,
@@ -1174,6 +1163,61 @@ class Browser(BaseProduct):
         aliases=['Firefox/3.5 Maemo'],
         exclude=None,
         browserType=BrowserType.MOBILE_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX41 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=140,
+        name='Firefox 41',
+        aliases=['Firefox/41'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX40 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=139,
+        name='Firefox 40',
+        aliases=['Firefox/40'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX39 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=138,
+        name='Firefox 39',
+        aliases=['Firefox/39'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX38 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=137,
+        name='Firefox 38',
+        aliases=['Firefox/38'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
+        renderingEngine=RenderingEngine.GECKO,
+        versionRegexString=None)
+
+    FIREFOX37 = EnumValue(
+        manufacturer=Manufacturer.MOZILLA,
+        parent=FIREFOX,
+        versionId=136,
+        name='Firefox 37',
+        aliases=['Firefox/37'],
+        exclude=None,
+        browserType=BrowserType.WEB_BROWSER,
         renderingEngine=RenderingEngine.GECKO,
         versionRegexString=None)
 
