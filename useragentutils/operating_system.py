@@ -27,6 +27,17 @@ class OperatingSystem(BaseProduct):
         deviceType=DeviceType.COMPUTER,
         versionRegexString=None)
 
+    WINDOWS_10 = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=WINDOWS,
+        versionId=24,
+        name='Windows 10',
+        aliases=['Windows NT 6.4', 'Windows NT 10'],
+        exclude=None,
+        deviceType=DeviceType.COMPUTER,
+        versionRegexString=None
+    )
+
     WINDOWS_81 = EnumValue(
         manufacturer=Manufacturer.MICROSOFT,
         parent=WINDOWS,
@@ -44,7 +55,7 @@ class OperatingSystem(BaseProduct):
         versionId=22,
         name='Windows 8',
         aliases=['Windows NT 6.2'],
-        exclude=None,
+        exclude=['Xbox', 'Xbox One'],
         deviceType=DeviceType.COMPUTER,
         versionRegexString=None
     )
@@ -56,7 +67,7 @@ class OperatingSystem(BaseProduct):
         versionId=21,
         name='Windows 7',
         aliases=['Windows NT 6.1'],
-        exclude=None,
+        exclude=['Xbox', 'Xbox One'],
         deviceType=DeviceType.COMPUTER,
         versionRegexString=None)
 
@@ -67,7 +78,7 @@ class OperatingSystem(BaseProduct):
         versionId=20,
         name='Windows Vista',
         aliases=['Windows NT 6'],
-        exclude=None,
+        exclude=['Xbox', 'Xbox One'],
         deviceType=DeviceType.COMPUTER,
         versionRegexString=None)
 
@@ -93,7 +104,47 @@ class OperatingSystem(BaseProduct):
         deviceType=DeviceType.COMPUTER,
         versionRegexString=None)
 
+    XBOX_OS = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=WINDOWS,
+        versionId=62,
+        name='Xbox OS',
+        aliases=['Xbox', 'Xbox One'],
+        exclude=None,
+        deviceType=DeviceType.GAME_CONSOLE,
+        versionRegexString=None)
+
     # before Win
+    WINDOWS_10_MOBILE = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=WINDOWS,
+        versionId=54,
+        name='Windows Phone 10',
+        aliases=['Windows Phone 10'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    WINDOWS_PHONE8_1 = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=WINDOWS,
+        versionId=53,
+        name='Windows Phone 8.1',
+        aliases=['Windows Phone 8.1'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    WINDOWS_PHONE8 = EnumValue(
+        manufacturer=Manufacturer.MICROSOFT,
+        parent=WINDOWS,
+        versionId=52,
+        name='Windows Phone 8',
+        aliases=['Windows Phone 8'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
     WINDOWS_MOBILE7 = EnumValue(
         manufacturer=Manufacturer.MICROSOFT,
         parent=WINDOWS,
@@ -136,10 +187,100 @@ class OperatingSystem(BaseProduct):
         deviceType=DeviceType.MOBILE,
         versionRegexString=None)
 
+	# Chrome OS by Google, mostly used on Chromebooks and Chromeboxes
+    CHROME_OS = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=None,
+        versionId=1000,
+        name='Chrome OS',
+        aliases=['CrOS'],
+        exclude=None,
+        deviceType=DeviceType.COMPUTER,
+        versionRegexString=None)
+
     #
     # First Android 4 device is the Galaxy Nexus phone. Once there are also Tablets with Android 4 we we will have to
     #  find a solution to distinguish between mobile phones and tablets.
     #
+    ANDROID8 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID,
+        versionId=8,
+        name='Android 8.x',
+        aliases=['Android 8', 'Android-8'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    ANDROID8_TABLET = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID8,
+        versionId=80,
+        name='Android 8.x Tablet',
+        aliases=['Android 8', 'Android-8'],
+        exclude=None,
+        deviceType=DeviceType.TABLET,
+        versionRegexString=None)
+
+    ANDROID7 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID,
+        versionId=7,
+        name='Android 7.x',
+        aliases=['Android 7', 'Android-7'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    ANDROID7_TABLET = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID7,
+        versionId=70,
+        name='Android 7.x Tablet',
+        aliases=['Android 7', 'Android-7'],
+        exclude=None,
+        deviceType=DeviceType.TABLET,
+        versionRegexString=None)
+
+    ANDROID6 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID,
+        versionId=6,
+        name='Android 6.x',
+        aliases=['Android 6', 'Android-6'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    ANDROID6_TABLET = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID6,
+        versionId=60,
+        name='Android 6.x Tablet',
+        aliases=['Android 6', 'Android-6'],
+        exclude=None,
+        deviceType=DeviceType.TABLET,
+        versionRegexString=None)
+
+    ANDROID5 = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID,
+        versionId=5,
+        name='Android 5.x',
+        aliases=['Android 5', 'Android-5'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    ANDROID5_TABLET = EnumValue(
+        manufacturer=Manufacturer.GOOGLE,
+        parent=ANDROID5,
+        versionId=50,
+        name='Android 5.x Tablet',
+        aliases=['Android 5', 'Android-5'],
+        exclude=None,
+        deviceType=DeviceType.TABLET,
+        versionRegexString=None)
 
     ANDROID4 = EnumValue(
         manufacturer=Manufacturer.GOOGLE,
@@ -156,7 +297,7 @@ class OperatingSystem(BaseProduct):
         parent=ANDROID4,
         versionId=40,
         name='Android 4.x Tablet',
-        aliases=['Xoom', 'Transformer'],
+        aliases=['Xoom', 'Transformer', 'Android 4', 'Android-4'],
         exclude=None,
         deviceType=DeviceType.TABLET,
         versionRegexString=None)
@@ -241,6 +382,106 @@ class OperatingSystem(BaseProduct):
         versionRegexString=None)
 
     # before MAC_OS_X_IPHONE for all older versions
+    iOS11_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=92,
+        name='iOS 11 (iPhone)',
+        aliases=['iPhone OS 11'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS10_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=91,
+        name='iOS 10 (iPhone)',
+        aliases=['iPhone OS 10'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS9_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=90,
+        name='iOS 9 (iPhone)',
+        aliases=['iPhone OS 9'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS8_4_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=49,
+        name='iOS 8.4 (iPhone)',
+        aliases=['iPhone OS 8_4'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS8_3_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=48,
+        name='iOS 8.3 (iPhone)',
+        aliases=['iPhone OS 8_3'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS8_2_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=47,
+        name='iOS 8.2 (iPhone)',
+        aliases=['iPhone OS 8_2'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS8_1_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=46,
+        name='iOS 8.1 (iPhone)',
+        aliases=['iPhone OS 8_1'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS8_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=45,
+        name='iOS 8 (iPhone)',
+        aliases=['iPhone OS 8'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS7_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=44,
+        name='iOS 7 (iPhone)',
+        aliases=['iPhone OS 7'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    iOS6_IPHONE = EnumValue(
+        manufacturer=Manufacturer.APPLE,
+        parent=IOS,
+        versionId=43,
+        name='iOS 6 (iPhone)',
+        aliases=['iPhone OS 6'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
     iOS5_IPHONE = EnumValue(
         manufacturer=Manufacturer.APPLE,
         parent=IOS,
@@ -550,6 +791,16 @@ class OperatingSystem(BaseProduct):
         versionId=1,
         name='BlackBerryOS',
         aliases=['BlackBerry'],
+        exclude=None,
+        deviceType=DeviceType.MOBILE,
+        versionRegexString=None)
+
+    BLACKBERRY10 = EnumValue(
+        manufacturer=Manufacturer.BLACKBERRY,
+        parent=BLACKBERRY,
+        versionId=10,
+        name='BlackBerry 10',
+        aliases=['BB10'],
         exclude=None,
         deviceType=DeviceType.MOBILE,
         versionRegexString=None)
